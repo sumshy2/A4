@@ -14,4 +14,3 @@ public class NoSuchLadderException extends Exception
         super(message, throwable);
     }
 }
-

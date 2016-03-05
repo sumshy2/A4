@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 // do not change class name or interface it implements
 public class WordLadderSolver implements Assignment4Interface
 {
@@ -167,5 +169,23 @@ public class WordLadderSolver implements Assignment4Interface
 				
     	return possibleWordArray;
 	}
+    
+    public boolean inDictionary(String startWord, String endWord, ArrayList<String> dictionary) throws NoSuchLadderException
+    {
+    	int startCount = 0;
+    	int endCount = 0;
+    	if(startWord.equals(startWord.toLowerCase()) && endWord.equals(endWord.toLowerCase())){
+	    	for(String dictionaryWord: dictionary){
+	    		if(startWord.equals(dictionaryWord))
+	    			startCount++;
+	    		if(endWord.equals(dictionaryWord))
+	    			endCount++;
+	    	}
+    	}
+    	if((startCount > 0) && (endCount > 0))
+    		return true; 
+    	else
+    		throw new NoSuchLadderException("Invalid Input");
+    }
     // add additional methods here
 }

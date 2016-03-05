@@ -1,5 +1,6 @@
 package assignment4;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface Assignment4Interface
@@ -35,5 +36,7 @@ public interface Assignment4Interface
      * @return True if the word ladder is correct, false otherwise.
      */
     boolean validateResult(String startWord, String endWord, List<String> wordLadder);
+    void getDictionaryWords(ArrayList<String> tempArrayList);
+    public boolean inDictionary(String startWord, String endWord, ArrayList<String> dictionary) throws NoSuchLadderException;
 }
 

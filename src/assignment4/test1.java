@@ -22,11 +22,23 @@ public class test1 {
 		assertEquals(true,solution.inDictionary("buenos", "cordoba", dict));
 	}*/
 	
-	public void test3() throws NoSuchLadderException{
+	//Black-box testing - test overall functionality of program (check that final output is correct) - ADJUST THIS CODE
+	//test computeLadder
+	public void test() throws NoSuchLadderException{
+		ArrayList<String> dict = new ArrayList<String>();
+		
+		solution.computeLadder("heads", "tails");
+	}
+	
+	//White-box testing - test OTHER components that computeLadder uses - ADD MORE CODE
+	public void test2() throws NoSuchLadderException{
 		ArrayList<String> dict = new ArrayList<String>();
 		solution.getDictionaryWords(dict);
-		assertEquals(true,solution.inDictionary("amaze", "alien!", dict));
+		assertEquals(true,solution.inDictionary("amaze", "alien", dict));
 	}
+	
+
+	
 	//WordLadder
 
 }
